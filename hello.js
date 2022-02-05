@@ -22,7 +22,21 @@ let room = {
         this.seen = true;
     },
     seen: false
-};
+}
+
+let hallway = {
+    stairs: {
+        lookAt: function () {
+            console.log(`Лестница ведет наверх и вниз. Кажется, вверху горит свет.`);
+            this.seen = true;
+        }
+    },
+    lookAt: function () {
+        console.log(`Справа входная дверь, в конце коридора окно, посередине лестница.`);
+        this.seen = true;
+    },
+    seen: false
+}
 
 function listAvailableActions() {
     let actions = [];
@@ -37,11 +51,20 @@ function listAvailableActions() {
         actions.push('потянуть за край обоев');
     }
     console.log(`Вы можете ${actions.join(', ')}`);
+}
 
+let myLocation = 0;
+
+function writeWhereAmI() {
+    if (myLocation === 0) {
+        console.log(`Вы находитесь в старом заброшенном особняке. Перед вам стена с оборванными обоями и, кажется, там что-то написано.`);
+    } else {
+        console.log(`Вы находитесь в старом заброшенном особняке. Перед вами коридор, посередине лестница, куда же она ведет?`);
+    }
 }
 
 let name = prompt('Введите ваше имя');
-console.log(`Вы находитесь в старом заброшенном особняке. Перед вам стена с оборванными обоями и, кажется, там что-то написано.`);
+writeWhereAmI();
 listAvailableActions();
 function act(action) {
     if (action === 'Осмотреть стену') {
