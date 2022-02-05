@@ -1,0 +1,56 @@
+html,
+body {
+    margin: 0;
+}
+
+body {
+    background-color: #000;
+    color: #31bd31;
+    font-family: Monaco, monospace;
+}
+
+.container {
+    height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 50px 0 30px 0;
+}
+
+.header__name {
+    margin: 0;
+}
+
+.history {
+    flex-grow: 1;
+    max-height: 60vh;
+    overflow: auto;
+}
+
+.action::before {
+    content: '>';
+    position: absolute;
+    left: 7px;
+    top: 25px;
+}
+
+.action {
+    position: relative;
+    padding: 20px 0 100px 0;
+}
+
+.action__input {
+    display: inline-block;
+    width: 100%;
+    color: inherit;
+    background: inherit;
+    border: none;
+    font: inherit;
+    padding: 5px 0 5px 15px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+}
